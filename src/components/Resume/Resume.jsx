@@ -1,13 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import profResume from "../../assets/ResumeAssets/Tony Amin - Resume.pdf";
-import fileIcon from "../../assets/ResumeAssets/folderIcon.png"
+import fileIcon from "../../assets/ResumeAssets/folderIcon.png";
 
 const Resume = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef(null); // Create a reference for the modal content
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  // Close modal when clicking outside the modal content
+  const closeModalOnOutsideClick = (e) => {
+    if (modalRef.current && !modalRef.current.contains(e.target)) {
+      setIsModalOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      // Add event listener for outside click
+      document.addEventListener("mousedown", closeModalOnOutsideClick);
+
+      // Cleanup event listener on component unmount or when modal is closed
+      return () => {
+        document.removeEventListener("mousedown", closeModalOnOutsideClick);
+      };
+    }
+  }, [isModalOpen]);
 
   return (
     <>
@@ -55,7 +75,10 @@ const Resume = () => {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-4 rounded-lg w-11/12 sm:w-3/4 md:w-1/2">
+          <div
+            ref={modalRef} // Attach the reference to the modal content
+            className="bg-white p-4 rounded-lg w-11/12 sm:w-3/4 md:w-1/2"
+          >
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-2xl font-bold text-amber-600">My Resume</h2>
               <button

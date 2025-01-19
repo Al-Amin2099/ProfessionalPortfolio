@@ -13,13 +13,18 @@ const ContactFooter = () => {
             <div className="flex flex-col">
               <div className="py-8 px-4">
                 <h1 className="sm:text-xl text-xl font-bold text-left mb-3">
-                  Important Links
+                  Links
                 </h1>
                 <ul className="flex flex-col gap-3">
-                  <li className="cursor-pointer">Home</li>
-                  <li className="cursor-pointer">About</li>
-                  <li className="cursor-pointer">Services</li>
-                  <li className="cursor-pointer">Login</li>
+                  <li className="cursor-pointer">
+                    <a href="#home">About Me</a>
+                  </li>
+                  <li className="cursor-pointer">
+                    <a href="#projects">Projects</a>
+                  </li>
+                  <li className="cursor-pointer">
+                    <a href="#resume">Resume</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -50,7 +55,7 @@ const ContactFooter = () => {
             {/* Column 3: Other Links (Social Media) */}
             <div className="flex flex-col items-center justify-start py-8 px-4">
               <h1 className="sm:text-xl text-xl font-bold text-left mb-3">
-                Other Links
+                Important Links
               </h1>
               <div className="flex flex-col gap-6 items-center">
                 <a

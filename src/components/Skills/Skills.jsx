@@ -1,5 +1,5 @@
 import React from "react";
-import star from "../../assets/star.gif";
+import wave from "../../assets/wave Gif.gif";
 import { FaReact } from "react-icons/fa";
 import { FaShuttleSpace, FaSpaceAwesome } from "react-icons/fa6";
 import { CgDesignmodo } from "react-icons/cg";
@@ -22,7 +22,7 @@ const ServiceData = [
   {
     title: "Passions",
     description:
-      " Robtoics | Rocketry and Avionics | HW / SW pProgramming",
+      " Robtoics | Rocketry and Avionics | HW / SW Programming",
     icon: <FaSpaceAwesome className="text-7xl" />,
     aosDelay: "700",
   },
@@ -52,7 +52,7 @@ const Skills = () => {
                 })}
               </div>
               <img
-                src={star}
+                src={wave}
                 alt=""
                 className="h-[200px] w-full  object-cover mix-blend-screen -translate-y-24 relative z-[0]"
               />

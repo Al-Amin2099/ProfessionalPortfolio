@@ -10,7 +10,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="bg-black/60 h-full relative"> {/* Darker background for better contrast */}
+    <div className="bg-black/35 h-full relative">
       <div className="h-full flex justify-center items-center p-4">
         <div className="container grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="text-white space-y-6 lg:pr-36">
