@@ -17,9 +17,10 @@ const App = () => {
       easing: "ease-in-out",
     });
   });
+
   return (
-    <div className="">
-      <div className="h-[700px] relative">
+    <div>
+      <div className="h-[700px] relative" id="home">
         <video
           autoPlay
           loop
@@ -31,12 +32,21 @@ const App = () => {
         <NavigationBar />
         <Hero />
       </div>
-      <Skills/>
-      <Projects/>
-      <Resume/>
-      <ContactFooter/>
+      <section id="skills">
+        <Skills />
+      </section>
+      <section id="projects">
+        <Projects />
+      </section>
+      <section id="resume">
+        <Resume />
+      </section>
+      <section id="contact">
+        <ContactFooter />
+      </section>
     </div>
   );
 };
+
 
 export default App;

@@ -4,6 +4,10 @@ import roverImage1 from "../../assets/ProjectsAssets/TitanRover/rover1.png";
 import roverImage2 from "../../assets/ProjectsAssets/TitanRover/rover2.png";
 import roverImage3 from "../../assets/ProjectsAssets/TitanRover/rover3.png";
 import roverImage4 from "../../assets/ProjectsAssets/TitanRover/rover4.png";
+// import project2Logo from "../../assets/ProjectsAssets/Project2/project2Logo.jpg";
+// import project3Logo from "../../assets/ProjectsAssets/Project3/project3Logo.jpg";
+// import project4Logo from "../../assets/ProjectsAssets/Project4/project4Logo.jpg";
+// import project5Logo from "../../assets/ProjectsAssets/Project5/project5Logo.jpg";
 
 const Projects = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,55 +41,91 @@ const Projects = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const projectDetails = [
+    {
+      title: "Titan Rover",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos molestiae reprehenderit expedita corporis, non doloremque.",
+      logo: roverLogo,
+    },
+    {
+      title: "Project 2",
+      description:
+        "A second project with swapped logo and text placements. Details about this project.",
+      logo: roverLogo,
+    },
+    {
+      title: "Project 3",
+      description:
+        "Third project details with alternating layout and relevant information.",
+      logo: roverLogo,
+    },
+    {
+      title: "Project 4",
+      description:
+        "Fourth project information with alternating layout placements.",
+      logo: roverLogo,
+    },
+    {
+      title: "Project 5",
+      description:
+        "Fifth project information showcasing final alternation in layout.",
+      logo: roverLogo,
+    },
+  ];
+
   return (
     <>
-      <section className="bg-primary text-white py-20">
-        <div className="container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
-            {/* Text Section */}
-            <div className="space-y-3 xl:pr-36 p-4 border-l-2 border-b-2 border-l-amber-600 border-b-amber-600">
-              <p
-                data-aos="fade-up"
-                data-aos-delay="300"
-                className="text-amber-600 uppercase"
+      {projectDetails.map((project, index) => (
+        <section className={`bg-primary text-white py-20`} key={index}>
+          <div className="container">
+            <div
+              className={`grid grid-cols-1 sm:grid-cols-2 gap-4 items-center ${
+                index % 2 === 0 ? "" : "sm:grid-cols-2-reverse"
+              }`}
+            >
+              {/* Text Section */}
+              <div
+                className={`space-y-3 xl:pr-36 p-4 border-l-2 border-b-2 border-l-amber-600 border-b-amber-600`}
               >
-                Project 1:
-              </p>
-              <h1
-                data-aos="fade-up"
-                data-aos-delay="500"
-                className="uppercase text-5xl"
-              >
-                Titan Rover
-              </h1>
-              <p data-aos="fade-up" data-aos-delay="700">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-                molestiae reprehenderit expedita corporis, non doloremque.
-                Consequatur consectetur quisquam qui sunt. Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Eos molestiae reprehenderit
-                expedita corporis, non doloremque. Consequatur consectetur
-                quisquam qui sunt.
-              </p>
-              <button
-                onClick={toggleModal}
-                data-aos="fade-up"
-                data-aos-delay="900"
-                className="bg-amber-400 text-gray-800 hover:bg-amber-500 px-4 py-1 rounded-md duration-200"
-              >
-                View More
-              </button>
-            </div>
-            {/* Image Section */}
-            <div data-aos="zoom-in">
-              <img
-                src={roverLogo}
-                alt="Rover Logo"
-                className="w-full sm:w-[80%] mx-auto max-h-[350px] object-contain"
-              />
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  className="text-amber-600 uppercase"
+                >
+                  Project {index + 1}:
+                </p>
+                <h1
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                  className="uppercase text-5xl"
+                >
+                  {project.title}
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="700">
+                  {project.description}
+                </p>
+                <button
+                  onClick={toggleModal}
+                  data-aos="fade-up"
+                  data-aos-delay="900"
+                  className="bg-amber-400 text-gray-800 hover:bg-amber-500 px-4 py-1 rounded-md duration-200"
+                >
+                  View More
+                </button>
+              </div>
+              {/* Image Section */}
+              <div data-aos="zoom-in">
+                <img
+                  src={project.logo}
+                  alt={`${project.title} Logo`}
+                  className="w-full sm:w-[80%] mx-auto max-h-[350px] object-contain"
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* Modal with Slideshow */}
       {isModalOpen && (

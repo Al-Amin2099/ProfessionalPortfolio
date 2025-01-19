@@ -26,16 +26,28 @@ const NavigationBar = () => {
             <div className="text-white hidden sm:block">
               <ul className="flex items-center gap-6 text-xl py-4">
                 <li>
-                  <a href="#"> About Me </a>
+                  <a
+                    href="#home"
+                    className="hover:text-orange-500 hover:text-shadow"
+                  >
+                    About Me
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Projects </a>
+                  <a
+                    href="#projects"
+                    className="hover:text-orange-500 hover:text-shadow"
+                  >
+                    Projects
+                  </a>
                 </li>
                 <li>
-                  <a href="#"> Resume </a>
-                </li>
-                <li>
-                  <a href="#"> Contact </a>
+                  <a
+                    href="#resume"
+                    className="hover:text-orange-500 hover:text-shadow"
+                  >
+                    Resume
+                  </a>
                 </li>
               </ul>
             </div>
