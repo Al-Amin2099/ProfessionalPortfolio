@@ -1,5 +1,5 @@
 import React from "react";
-import BgVideo from "./assets/3D_printer_asset.mp4";
+import BgVideo from "./assets/HeroAssets/3D_printer_asset.mp4";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import Hero from "./components/Hero/Hero";
 import Skills from "./components/Skills/Skills";

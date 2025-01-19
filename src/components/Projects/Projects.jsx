@@ -13,14 +13,14 @@ const Projects = () => {
                 data-aos-delay="300"
                 className="text-sky-800 uppercase"
               >
-                our mission
+                Project 1:
               </p>
               <h1
                 data-aos="fade-up"
                 data-aos-delay="500"
                 className="uppercase text-5xl"
               >
-                Rapidscat
+                Titan Rover
               </h1>
               <p data-aos="fade-up" data-aos-delay="700">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
